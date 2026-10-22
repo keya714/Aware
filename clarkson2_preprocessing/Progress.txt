@@ -1,0 +1,40 @@
+Completed the first three preprocessing steps in a separate folder.
+Notebook: [clarkson2_first3_steps.ipynb](C:/Users/keyar/Documents/GradSem3/Biometric/Term Project/clarkson2_preprocessing/clarkson2_first3_steps.ipynb)
+Outputs are in [clarkson2_preprocessing](C:/Users/keyar/Documents/GradSem3/Biometric/Term Project/clarkson2_preprocessing).
+Results:
+- 100 user files validated
+- 25,261,528 raw events
+- 25,261,511 valid events
+- 17 malformed rows skipped in normalized copies
+- 0 invalid timestamps
+- 0 invalid press/release flags
+- 21 timestamp backsteps
+- 870,748 equal-timestamp events
+- 395,335 consecutive duplicate rows
+- 100 compressed normalized files generated
+Important: the raw Clarkson II data was not modified. The normalized files preserve the original timestamp and add absolute seconds plus elapsed seconds from each user’s first event.
+Progress through 2026-10-22:
+
+- Investigated anomalies in all 100 normalized user files.
+  - 10,291,192 press/release pairs identified before final cleaning
+  - 19,319 unmatched release events
+  - 4,391,358 unmatched press events
+  - No negative hold durations were observed in the repaired pairs
+  - Wrote anomaly summaries and example CSV reports to `outputs/anomaly_investigation`
+- Extracted event-level features for all 100 users.
+  - Generated 100 compressed feature files in `outputs/event_features`
+  - Features include hold time, press-to-press interval, release-to-press interval, inter-event time, and typing rate
+- Completed hold-time threshold sensitivity analysis.
+  - Compared maximum hold thresholds of 5, 10, and 30 seconds
+  - At the selected 5-second threshold: 5,498,480 pairs retained and 4,926,669 long holds removed
+  - Sensitivity tables, quantiles, histograms, and examples are in `outputs/hold_threshold_sensitivity`
+- Completed the full cleaning and modeling-ready dataset pipeline.
+  - Repaired press/release pairs, removed long holds, segmented typing bursts, and created fixed-size windows of 50 pairs with stride 50
+  - 100 input users; 94 eligible users; user `214875` excluded for insufficient usable windows
+  - 5,498,480 valid pairs after cleaning
+  - 79,286 raw windows and 79,285 normalized windows
+  - 322,969 chronological verification trials generated
+  - Training-only feature normalization and chronological train/adaptation/test splits completed
+  - Final artifacts are in `outputs/final_clean_dataset`, including clean events, normalized windows, verification trials, quality reports, and the train-only scaler
+
+The raw Clarkson II data remains unchanged. All work after normalization was written under `clarkson2_preprocessing/outputs`.
