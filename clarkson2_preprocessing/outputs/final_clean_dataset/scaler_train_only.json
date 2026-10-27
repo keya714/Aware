@@ -1,0 +1,44 @@
+{
+  "means": {
+    "hold_mean": 0.3299944082968293,
+    "hold_std": 0.5205435989103014,
+    "hold_median": 0.12791569513349746,
+    "hold_q25": 0.09618178647615139,
+    "hold_q75": 0.3014453097924425,
+    "press_to_press_mean": 53.492765693439075,
+    "press_to_press_std": 372.732819822969,
+    "release_to_press_mean": 0.0,
+    "release_to_press_std": 0.0,
+    "inter_event_mean": 18.083048087624675,
+    "inter_event_std": 584.9837390640862,
+    "typing_rate": 3.364093815413771
+  },
+  "stds": {
+    "hold_mean": 0.28153838661911573,
+    "hold_std": 0.4466333557601942,
+    "hold_median": 0.1296206695598104,
+    "hold_q25": 0.06445098079486863,
+    "hold_q75": 0.4510394298793077,
+    "press_to_press_mean": 3275.0257420938424,
+    "press_to_press_std": 22925.157749293438,
+    "release_to_press_mean": 1.0,
+    "release_to_press_std": 1.0,
+    "inter_event_mean": 7867.538944395793,
+    "inter_event_std": 55069.80321928149,
+    "typing_rate": 3.1637867515449125
+  },
+  "features": [
+    "hold_mean",
+    "hold_std",
+    "hold_median",
+    "hold_q25",
+    "hold_q75",
+    "press_to_press_mean",
+    "press_to_press_std",
+    "release_to_press_mean",
+    "release_to_press_std",
+    "inter_event_mean",
+    "inter_event_std",
+    "typing_rate"
+  ]
+}

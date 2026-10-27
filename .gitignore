@@ -1,0 +1,8 @@
+# Files excluded because they exceed GitHub's browser upload limit or
+# GitHub's regular-Git 100 MiB per-file limit.
+clarkson-II-2018-filtered_dataset.zip
+clarkson2_preprocessing/outputs/final_clean_dataset/windows_normalized.csv
+filtered_dataset/808884
+clarkson2_attention_model/results/sequence_metadata.csv
+filtered_dataset/199679
+clarkson2_attention_model/results/sequences.npz

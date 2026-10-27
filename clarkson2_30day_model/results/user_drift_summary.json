@@ -1,0 +1,10 @@
+{
+  "definition": "Drift is the increase in mean embedding distance from the first-30-day train enrollment prototype to later-stage windows, relative to the same user's first-30-day test distance.",
+  "threshold": 1.1885696649551392,
+  "minimum_stage_windows_for_ranking": 5,
+  "users_with_any_later_metrics": 76,
+  "users_ranked": 74,
+  "maximum_mean_absolute_drift_user": "163748",
+  "maximum_mean_absolute_drift": 0.7299281358718872,
+  "maximum_mean_relative_drift": 2.3676571408685163
+}

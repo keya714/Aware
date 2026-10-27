@@ -1,0 +1,35 @@
+[
+  {
+    "stage":"stage_1",
+    "users_with_queries":73,
+    "windows":17145,
+    "genuine_trials":17000,
+    "impostor_trials":1496000,
+    "eer":0.2554913102,
+    "threshold":1.1434796878,
+    "far":0.2551590909,
+    "frr":0.2558235294
+  },
+  {
+    "stage":"stage_2",
+    "users_with_queries":56,
+    "windows":11986,
+    "genuine_trials":11983,
+    "impostor_trials":1054504,
+    "eer":0.2665385812,
+    "threshold":1.1482317398,
+    "far":0.2670336006,
+    "frr":0.2660435617
+  },
+  {
+    "stage":"stage_3",
+    "users_with_queries":68,
+    "windows":8260,
+    "genuine_trials":8143,
+    "impostor_trials":716584,
+    "eer":0.2494341208,
+    "threshold":1.1250668045,
+    "far":0.2492059549,
+    "frr":0.2496622866
+  }
+]

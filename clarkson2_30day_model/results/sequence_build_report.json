@@ -1,0 +1,16 @@
+{
+  "windows": 41895,
+  "shape": [
+    41895,
+    50,
+    4
+  ],
+  "users": 89,
+  "features": [
+    "hold_seconds",
+    "press_to_press_seconds",
+    "release_to_press_seconds",
+    "inter_event_seconds"
+  ],
+  "transform": "log1p(max(seconds, 0))"
+}

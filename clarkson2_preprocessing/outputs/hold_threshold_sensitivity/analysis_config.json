@@ -1,0 +1,27 @@
+{
+  "thresholds_seconds": [
+    5.0,
+    10.0,
+    30.0
+  ],
+  "histogram_edges_seconds": [
+    0,
+    0.01,
+    0.025,
+    0.05,
+    0.1,
+    0.25,
+    0.5,
+    1,
+    2,
+    5,
+    10,
+    30,
+    60,
+    120,
+    300,
+    Infinity
+  ],
+  "reservoir_size": 100000,
+  "random_seed": 228
+}

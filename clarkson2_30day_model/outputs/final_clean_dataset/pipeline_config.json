@@ -1,0 +1,8 @@
+{
+  "cap_days": 30,
+  "window_pairs": 50,
+  "window_stride": 50,
+  "train_fraction": 0.6,
+  "adapt_fraction": 0.2,
+  "source": "clean_events after original cleaning"
+}

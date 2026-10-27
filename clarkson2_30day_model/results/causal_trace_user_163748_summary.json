@@ -1,0 +1,12 @@
+{
+  "target_user": "163748",
+  "stage": "stage_2",
+  "reference": "target user's first-30-day train activations",
+  "control_reference_user": "118630",
+  "baseline_mean_distance": 1.1754579544067383,
+  "baseline_distance_std": 0.31743499636650085,
+  "best_intervention": "embedding_projection",
+  "best_recovery_fraction": 0.8958482146263123,
+  "best_distance_recovery": 1.0530319213867188,
+  "interpretation": "Activation patching is an intervention-based localization test; it indicates which representation can restore the target user's early embedding behavior, not that a single layer literally stores the whole user identity."
+}

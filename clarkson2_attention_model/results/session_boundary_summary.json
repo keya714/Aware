@@ -1,0 +1,9 @@
+{
+  "users_analyzed": 100,
+  "users_with_gap_at_least_180_days": 20,
+  "largest_gap_days_median": 49.66613591935706,
+  "largest_gap_days_min": 2.8017719907407407e-06,
+  "largest_gap_days_max": 574.2117864080266,
+  "span_days_median": 248.4052326142494,
+  "caution": "A large timestamp gap is a candidate session boundary; confirm against the dataset's session metadata or raw release documentation before treating it as definitive."
+}

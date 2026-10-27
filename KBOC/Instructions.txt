@@ -1,0 +1,18 @@
+Keystroke Biometric Ongoing Competition (KBOC) is an official competition of The IEEE Eighth International Conference on Biometrics: Theory, Applications, and Systems (BTAS 2016) organized by ATVS Biometric Research Group
+ 
+This kit includes a Development set (10 users with 24 samples per suser) and Matlab code example for better understanding the nature of the data used and the experimental protocol of the competition. 
+
+Note that while genuine and impostor samples are know in the development set (first 14 samples of each user are genuine and remaining 10 are impostors), this information will be sequestered for the Test set.
+
+Each file sample is named as DXXX_YY.txt, where XXX is the number of user and YY the number of sample. The files contain the following information:
+
+23  %Number of keys
+  0x2aD       0  % see explanation below*
+  0x24D     265  
+  0x24U     109
+  0x2aU       0
+  …
+ 
+*0x2a=scancode, D=type of event(D= press, U= release), 0=time between two consecutive key events (the first is always the reference zero).
+
+The time sequence is given in form of time (milliseconds) elapsed between events. In this example, the difference between the pressure of the key 0x2a and the key 0x24 is 265, the difference between the pressure of the key 0x24 and the release of 0x24 is 109,...

@@ -1,0 +1,33 @@
+{
+  "target_user": 1,
+  "sample_keys": [
+    "participant_id",
+    "session_date",
+    "session_num",
+    "phrase_index",
+    "repetition"
+  ],
+  "event_features": [
+    "hold_time",
+    "down_down_latency",
+    "up_down_latency",
+    "elapsed_seconds"
+  ],
+  "max_sequence_length": 32,
+  "d_model": 64,
+  "encoder_layers": 2,
+  "attention_heads": 4,
+  "seed": 42,
+  "feature_report": {
+    "event_rows": 189196,
+    "attempts_kept": 12815,
+    "attempts_dropped": 384,
+    "max_sequence_length": 32,
+    "key_vocabulary_size": 122
+  },
+  "split_sizes": {
+    "train": 8970,
+    "validation": 1922,
+    "test": 1923
+  }
+}

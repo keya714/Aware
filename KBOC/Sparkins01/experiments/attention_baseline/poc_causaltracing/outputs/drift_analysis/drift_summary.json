@@ -1,0 +1,53 @@
+{
+  "ranking_definition": "KS distribution shift first; mean score decrease breaks ties",
+  "week1_sequence_report": {
+    "event_rows": 189196,
+    "attempts_kept": 12815,
+    "attempts_dropped": 384,
+    "max_sequence_length": 32,
+    "key_vocabulary_size": 122
+  },
+  "week8_sequence_report": {
+    "source": "C:\\Users\\keyar\\Documents\\GradSem3\\Biometric\\Term Project\\Sparkins01\\experiments\\attention_baseline\\poc_causaltracing\\outputs\\week8_all_users\\all_week8_sample_scores.csv",
+    "cached": true
+  },
+  "most_drift_ks": {
+    "participant_id": 66.0,
+    "n_week1": 159.0,
+    "n_week8": 153.0,
+    "mean_week1": 0.1107991428506918,
+    "mean_week8": 0.12191737106707541,
+    "mean_delta_week8_minus_week1": 0.011118228216383613,
+    "median_delta_week8_minus_week1": -0.0010365336784162369,
+    "ks_statistic": 0.46824515969909974,
+    "week1_rejection_rate_at_0.5": 0.89937106918239,
+    "week8_rejection_rate_at_0.5": 0.9934640522875817,
+    "rejection_rate_delta": 0.09409298310519176
+  },
+  "largest_mean_decrease": {
+    "participant_id": 13.0,
+    "n_week1": 160.0,
+    "n_week8": 160.0,
+    "mean_week1": 0.3008635924637929,
+    "mean_week8": 0.131440301767725,
+    "mean_delta_week8_minus_week1": -0.1694232906960679,
+    "median_delta_week8_minus_week1": -0.20970701426267627,
+    "ks_statistic": 0.38125,
+    "week1_rejection_rate_at_0.5": 0.725,
+    "week8_rejection_rate_at_0.5": 0.96875,
+    "rejection_rate_delta": 0.24375000000000002
+  },
+  "largest_rejection_rate_increase": {
+    "participant_id": 13.0,
+    "n_week1": 160.0,
+    "n_week8": 160.0,
+    "mean_week1": 0.3008635924637929,
+    "mean_week8": 0.131440301767725,
+    "mean_delta_week8_minus_week1": -0.1694232906960679,
+    "median_delta_week8_minus_week1": -0.20970701426267627,
+    "ks_statistic": 0.38125,
+    "week1_rejection_rate_at_0.5": 0.725,
+    "week8_rejection_rate_at_0.5": 0.96875,
+    "rejection_rate_delta": 0.24375000000000002
+  }
+}

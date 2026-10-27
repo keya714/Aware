@@ -1,0 +1,40 @@
+{
+  "target_user": 1,
+  "week": 8,
+  "model_update": "none",
+  "interpretation": "user-1-vs-all checkpoint; per-user rows are cohort diagnostics, not separate user authentication models",
+  "n_users": 76,
+  "n_samples": 11809,
+  "sequence_report": {
+    "event_rows": 181213,
+    "attempts_kept": 11809,
+    "attempts_dropped": 471,
+    "max_sequence_length": 32,
+    "key_vocabulary_size": 123
+  },
+  "target_user_metrics": {
+    "roc_auc": 0.9187950682462014,
+    "eer": 0.1746748647952614,
+    "eer_threshold": 0.33328336477279663,
+    "far": 0.06807451283371964,
+    "frr": 0.35,
+    "recall": 0.65,
+    "f1": 0.1967833491012299,
+    "precision": 0.11594202898550725,
+    "accuracy": 0.9281056821068676,
+    "n": 11809,
+    "positive": 160,
+    "confusion_matrix": {
+      "tn": 10856,
+      "fp": 793,
+      "fn": 56,
+      "tp": 104
+    }
+  },
+  "target_user_false_rejections": 56,
+  "output_files": {
+    "all_sample_scores": "all_week8_sample_scores.csv",
+    "per_user_summary": "per_user_week8_summary.csv",
+    "target_false_rejections": "target_user_false_rejections.csv"
+  }
+}

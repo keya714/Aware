@@ -1,0 +1,122 @@
+Project Progress
+================
+
+Date: 2026-10-22
+
+Clarkson II preprocessing status
+--------------------------------
+
+The Clarkson II archive was extracted and inspected. The local release contains:
+
+- 100 user files
+- 25,261,528 raw event rows
+- Timestamp, press/release flag, and key fields
+
+Completed notebooks
+-------------------
+
+- clarkson2_first3_steps.ipynb
+  - Preserved the raw data.
+  - Validated the file schema and event values.
+  - Normalized timestamps while leaving the raw files unchanged.
+
+- clarkson2_event_features.ipynb
+  - Created press/release pairs.
+  - Computed hold, press-to-press, and release-to-press timing features.
+
+- clarkson2_anomaly_investigation.ipynb
+  - Investigated unmatched events and negative hold times.
+
+- clarkson2_full_cleaning_pipeline.ipynb
+  - Repaired timestamp-reset segments.
+  - Created bursts, windows, chronological splits, normalized features, and verification trials.
+
+- clarkson2_hold_threshold_sensitivity.ipynb
+  - Compared 5-, 10-, and 30-second hold-time thresholds.
+
+- clarkson2_hold_threshold_visualization.ipynb
+  - Generated visual reports for threshold retention and hold-time distributions.
+
+Anomaly findings
+----------------
+
+The initial pairing pass found:
+
+- 134,225 negative hold-time pairs.
+- 21 timestamp backsteps.
+- 7 users with negative hold-time pairs:
+  199679, 631580, 731275, 76383, 808884, 867544, 95977.
+
+After splitting streams at timestamp backsteps and resetting pairing queues, negative hold pairs became zero. However, this did not resolve the broader long-hold problem.
+
+Hold-threshold sensitivity
+--------------------------
+
+Before applying the hold threshold, there were 10,425,149 nonnegative pairs:
+
+- 5-second threshold: 5,498,480 kept; 52.74% retained.
+- 10-second threshold: 5,710,903 kept; 54.78% retained.
+- 30-second threshold: 6,012,477 kept; 57.67% retained.
+
+The approximate hold-time distribution had a median of 2.12 seconds, but the 75th percentile was approximately 136,269 seconds. More than 3.8 million pairs exceeded 300 seconds. This indicates that many long holds are probably caused by logger behavior, missing releases, or incorrect press/release pairing rather than genuine typing behavior.
+
+The seven users with the original negative holds only partially overlap with the users most affected by long holds. Four of the seven appeared in the top 15 users by long-hold removal count: 199679, 731275, 76383, and 808884. The long-hold problem is therefore broader than the timestamp-reset problem.
+
+Full-pipeline output
+--------------------
+
+The full cleaning pipeline produced:
+
+- 5,498,480 valid event pairs.
+- 79,285 windows.
+- 322,969 generated verification trials.
+- 94 eligible users.
+- 5 users with no valid windows: 130667, 241253, 362964, 379149, 483168.
+- User 214875 had too few windows and was excluded.
+
+Current decision
+----------------
+
+Ignore Clarkson II for modeling for now. Do not use the current cleaned windows or verification trials as the project's final modeling dataset because the long-hold/pairing problem has not been resolved.
+
+The raw data and all preprocessing reports are being preserved. Revisit Clarkson II only after developing and validating a better press/release interpretation or pairing policy. Consider using another dataset, such as KBOC or Clarkson I, for the immediate modeling work.
+
+30-day capped experiment (2026-10-22)
+--------------------------------------
+The maximum-gap analysis shows that 87 of the 100 users span at least 30 calendar days; 13 users have less than 30 days of recorded activity. A separate 30-day-capped dataset was therefore created without modifying the original clean dataset. For each source user, events were retained from that user's first absolute timestamp through the first 30 days, then 50-pair windows and chronological train/adapt/test splits were rebuilt.
+
+All 100 source user files are retained and documented in clarkson2_30day_model\outputs\final_clean_dataset\user_30day_report.csv. The cap contains 2,563,906 valid event pairs and 41,895 windows. 89 users produce at least one window and 85 produce at least three windows. Users with less than 30 days are not artificially extended; their available data is retained and flagged. This is a capped first-30-day experiment, not a guarantee that every user has 30 days.
+
+Later-stage evaluation
+----------------------
+The best attention model trained only on the first-30-day dataset was frozen. Remaining data after day 30 was divided into three equal chronological intervals per user and evaluated against enrollment prototypes built from the first-30-day training windows. The later-stage evaluation contains 37,391 windows from 82 users.
+
+- Stage 1: 17,145 windows, 73 users, EER 25.55%, FAR 25.52%, FRR 25.58%.
+- Stage 2: 11,986 windows, 56 users, EER 26.65%, FAR 26.70%, FRR 26.60%.
+- Stage 3: 8,260 windows, 68 users, EER 24.94%, FAR 24.92%, FRR 24.97%.
+
+Outputs are stored in clarkson2_30day_model\results\remaining_stage_metrics.csv and visualized in clarkson2_30day_model\figures\remaining_stage_error_rates.png and remaining_stage_window_counts.png.
+
+Stage-duration interpretation
+-----------------------------
+The three later stages are user-specific. For each user, all timestamps after day 30 were identified and that user's remaining time span was divided into three equal chronological intervals. Therefore, the stages do not represent fixed global periods such as 30, 60, and 90 days.
+
+Across users, the median observed stage durations were:
+
+- Stage 1: 43.4 days.
+- Stage 2: 42.2 days.
+- Stage 3: 32.7 days.
+
+The median remaining span after the first 30 days was 193.9 days, the mean was 312.6 days, and the maximum was 1,104.9 days. Some users had very short remaining spans, so stage durations can be much shorter than the medians. The stages represent relative temporal progression after the training period, not identical calendar intervals across users.
+
+Training-period versus later-stage comparison
+----------------------------------------------
+The best first-30-day attention model produced 13.70% EER on its adaptation split and 13.98% EER on its first-30-day test split. The same frozen model produced 25.55% EER in Stage 1, 26.65% in Stage 2, and 24.94% in Stage 3. The comparison is visualized in clarkson2_30day_model\figures\training_vs_later_stage_error_rates.png and stored numerically in clarkson2_30day_model\results\training_vs_later_stage_comparison.csv.
+
+User-level drift analysis
+-------------------------
+User-level drift was measured as the increase in mean embedding distance from each user's first-30-day training enrollment prototype to later-stage windows, relative to that user's first-30-day test distance. Users were ranked only when they had at least five windows in a stage.
+
+The largest overall mean drift was user 163748: +0.7299 embedding-distance units on average across its available later stages, or approximately a 236.8% relative increase. Its Stage 2 increase was +0.8672 and its Stage 3 increase was +0.8223. Other high-drift users included 731275 (+0.5883), 562519 (+0.5588), 185546 (+0.5313), and 118630 (+0.4830).
+
+The complete per-user metrics are in clarkson2_30day_model\results\user_drift_metrics.csv and the ranked summary is in user_drift_overall_ranking.csv. Visualizations are stored in clarkson2_30day_model\figures\top_user_drift.png, user_drift_heatmap.png, and user_drift_by_stage_boxplot.png. This identifies candidates for causal tracing; it does not yet establish the cause of each user's drift.

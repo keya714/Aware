@@ -1,0 +1,46 @@
+{
+  "target_user": 1,
+  "feature_names": [
+    "n_events",
+    "hold_time_mean",
+    "hold_time_std",
+    "hold_time_median",
+    "hold_time_min",
+    "hold_time_max",
+    "down_down_latency_mean",
+    "down_down_latency_std",
+    "down_down_latency_median",
+    "down_down_latency_min",
+    "down_down_latency_max",
+    "up_down_latency_mean",
+    "up_down_latency_std",
+    "up_down_latency_median",
+    "up_down_latency_min",
+    "up_down_latency_max",
+    "elapsed_seconds_mean",
+    "elapsed_seconds_std",
+    "elapsed_seconds_median",
+    "elapsed_seconds_min",
+    "elapsed_seconds_max"
+  ],
+  "sample_keys": [
+    "participant_id",
+    "session_date",
+    "session_num",
+    "phrase_index",
+    "repetition"
+  ],
+  "architecture": "64-32 FNN",
+  "seed": 42,
+  "feature_report": {
+    "event_rows": 189196,
+    "attempts_kept": 13137,
+    "attempts_dropped_for_length_or_missing_timestamps": 62,
+    "max_events": 64
+  },
+  "split_sizes": {
+    "train": 9195,
+    "validation": 1971,
+    "test": 1971
+  }
+}

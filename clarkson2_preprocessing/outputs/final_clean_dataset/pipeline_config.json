@@ -1,0 +1,13 @@
+{
+  "idle_gap_seconds": 30.0,
+  "min_pairs_per_burst": 20,
+  "window_pairs": 50,
+  "window_stride": 50,
+  "min_windows_per_user": 3,
+  "train_fraction": 0.6,
+  "adapt_fraction": 0.2,
+  "max_hold_seconds": 5.0,
+  "max_flight_seconds": 60.0,
+  "impostor_users_per_target": 5,
+  "random_seed": 228
+}

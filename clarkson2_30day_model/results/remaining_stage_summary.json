@@ -1,0 +1,8 @@
+{
+  "model": "attention_model_best.pt",
+  "enrollment": "train-split windows from first 30 days",
+  "stage_definition": "remaining timestamps divided into three equal chronological intervals per user",
+  "remaining_windows": 37391,
+  "remaining_users": 82,
+  "users_with_30day_enrollment": 89
+}

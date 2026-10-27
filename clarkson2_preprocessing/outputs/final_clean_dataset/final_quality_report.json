@@ -1,0 +1,17 @@
+{
+  "input_users": 100,
+  "eligible_users": 94,
+  "excluded_users": [
+    "214875"
+  ],
+  "input_events": 25261511,
+  "valid_pairs": 5498480,
+  "negative_holds_removed": 0,
+  "long_holds_removed": 4926669,
+  "long_flights_removed": 0,
+  "unmatched_presses": 3790444,
+  "unmatched_releases": 19587,
+  "raw_windows": 79286,
+  "normalized_windows": 79285,
+  "verification_trials": 322969
+}

@@ -1,0 +1,22 @@
+{
+  "target_user": 1,
+  "dataset_source": "https://github.com/sparkins01/keystroke",
+  "negative_label": 0,
+  "positive_label": 1,
+  "week1": {
+    "data_path": "C:\\Users\\keyar\\Documents\\GradSem3\\Biometric\\Term Project\\Sparkins01\\data\\week_1.csv.gz",
+    "usable_attempts_approx": 159,
+    "baseline_metrics_path": "C:\\Users\\keyar\\Documents\\GradSem3\\Biometric\\Term Project\\Sparkins01\\experiments\\attention_baseline\\outputs\\metrics.json"
+  },
+  "week8": {
+    "status": "available",
+    "data_path": "data\\week_8.csv.gz",
+    "usable_attempts_approx": 160
+  },
+  "selection_criteria": {
+    "good_week1_performance": "confirmed by existing baseline metrics",
+    "enough_week8_samples": "confirmed: 160 usable attempts",
+    "week8_degradation": "pending Week 8 data",
+    "false_negatives": "pending Week 8 evaluation"
+  }
+}
