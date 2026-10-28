@@ -1,0 +1,143 @@
+{
+  "users": [
+    "132109",
+    "163748",
+    "199679",
+    "465234",
+    "562519",
+    "720842",
+    "748549",
+    "756382",
+    "76383",
+    "850304"
+  ],
+  "cohort_definition": "top five and bottom five eligible users ranked by Stage 1 drift only",
+  "stage_used_for_tracing": "stage_1",
+  "held_out_stages": [
+    "stage_2",
+    "stage_3"
+  ],
+  "threshold": 1.1885696649551392,
+  "best_by_user": [
+    {
+      "user_id": "132109",
+      "stage": "stage_1",
+      "intervention": "embedding_projection",
+      "n_windows": 30,
+      "baseline_mean_distance": 1.1360912322998047,
+      "patched_mean_distance": 0.1982536017894745,
+      "distance_recovery": 0.9378376007080078,
+      "recovery_fraction": 0.8254949450492859,
+      "patched_frr": 0.0,
+      "wrong_user_control_distance": 1.1290814876556396
+    },
+    {
+      "user_id": "163748",
+      "stage": "stage_1",
+      "intervention": "embedding_projection",
+      "n_windows": 274,
+      "baseline_mean_distance": 0.8085604906082153,
+      "patched_mean_distance": 0.12242597341537476,
+      "distance_recovery": 0.6861345171928406,
+      "recovery_fraction": 0.8485877513885498,
+      "patched_frr": 0.0,
+      "wrong_user_control_distance": 1.3522223234176636
+    },
+    {
+      "user_id": "199679",
+      "stage": "stage_1",
+      "intervention": "embedding_projection",
+      "n_windows": 425,
+      "baseline_mean_distance": 1.184238314628601,
+      "patched_mean_distance": 0.25353479385375977,
+      "distance_recovery": 0.9307035207748413,
+      "recovery_fraction": 0.7859089970588684,
+      "patched_frr": 0.0,
+      "wrong_user_control_distance": 1.2748947143554688
+    },
+    {
+      "user_id": "465234",
+      "stage": "stage_1",
+      "intervention": "embedding_projection",
+      "n_windows": 236,
+      "baseline_mean_distance": 0.8897317051887512,
+      "patched_mean_distance": 0.4559026062488556,
+      "distance_recovery": 0.43382909893989563,
+      "recovery_fraction": 0.48759540915489197,
+      "patched_frr": 0.0,
+      "wrong_user_control_distance": 1.1406662464141846
+    },
+    {
+      "user_id": "562519",
+      "stage": "stage_1",
+      "intervention": "embedding_projection",
+      "n_windows": 94,
+      "baseline_mean_distance": 1.0015150308609009,
+      "patched_mean_distance": 0.1907833367586136,
+      "distance_recovery": 0.8107317090034485,
+      "recovery_fraction": 0.80950528383255,
+      "patched_frr": 0.0,
+      "wrong_user_control_distance": 1.3709572553634644
+    },
+    {
+      "user_id": "720842",
+      "stage": "stage_1",
+      "intervention": "embedding_projection",
+      "n_windows": 80,
+      "baseline_mean_distance": 0.8223515748977661,
+      "patched_mean_distance": 0.4056885838508606,
+      "distance_recovery": 0.4166629910469055,
+      "recovery_fraction": 0.5066725611686707,
+      "patched_frr": 0.0,
+      "wrong_user_control_distance": 1.2705570459365845
+    },
+    {
+      "user_id": "748549",
+      "stage": "stage_1",
+      "intervention": "embedding_projection",
+      "n_windows": 33,
+      "baseline_mean_distance": 0.9509954452514648,
+      "patched_mean_distance": 0.3209141790866852,
+      "distance_recovery": 0.630081295967102,
+      "recovery_fraction": 0.6625491976737976,
+      "patched_frr": 0.0,
+      "wrong_user_control_distance": 1.3932405710220337
+    },
+    {
+      "user_id": "756382",
+      "stage": "stage_1",
+      "intervention": "embedding_projection",
+      "n_windows": 799,
+      "baseline_mean_distance": 0.9718708395957947,
+      "patched_mean_distance": 0.26073068380355835,
+      "distance_recovery": 0.7111401557922363,
+      "recovery_fraction": 0.731722891330719,
+      "patched_frr": 0.0,
+      "wrong_user_control_distance": 1.3713781833648682
+    },
+    {
+      "user_id": "76383",
+      "stage": "stage_1",
+      "intervention": "embedding_projection",
+      "n_windows": 229,
+      "baseline_mean_distance": 1.1377017498016357,
+      "patched_mean_distance": 0.25353479385375977,
+      "distance_recovery": 0.884166955947876,
+      "recovery_fraction": 0.7771518230438232,
+      "patched_frr": 0.0,
+      "wrong_user_control_distance": 1.2748948335647583
+    },
+    {
+      "user_id": "850304",
+      "stage": "stage_1",
+      "intervention": "embedding_projection",
+      "n_windows": 283,
+      "baseline_mean_distance": 0.9642088413238525,
+      "patched_mean_distance": 0.23104485869407654,
+      "distance_recovery": 0.7331639528274536,
+      "recovery_fraction": 0.7603787779808044,
+      "patched_frr": 0.0,
+      "wrong_user_control_distance": 1.3556758165359497
+    }
+  ]
+}

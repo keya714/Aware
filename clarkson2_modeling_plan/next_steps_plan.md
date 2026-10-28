@@ -275,3 +275,50 @@ Checkpoint 1 coding is complete when:
 8. Evaluate both models on train, adaptation, and test splits.
 9. Save metrics, curves, score plots, and error CSVs.
 10. Inspect longitudinal degradation.
+
+## 15. ROME-style rank-one model editing
+
+The model-editing phase uses the Rank-One Model Editing (ROME) method from
+Meng et al., *Locating and Editing Factual Associations in GPT*, adapted to
+the biometric Transformer rather than using generic low-rank fine-tuning.
+
+The causal-tracing result selects the second Transformer feed-forward
+projection as the candidate edit location. For each selected drifting user:
+
+1. Compute the ROME key `k` as the mean layer-2 `linear2` input activation
+   over that user's Stage 1 adaptation windows.
+2. Estimate the uncentered key covariance `C` from first-30-day training
+   windows, with a small ridge for numerical stability.
+3. Optimize only the desired value vector `v` while keeping the model weights
+   frozen; preserve the original model outputs on a replay buffer.
+4. Apply the closed-form rank-one update:
+
+   `W_new = W + (v - (Wk + b)) (C^-1 k)^T / ((C^-1 k)^T k)`
+
+5. Evaluate the edited model on first-30-day test data, Stage 2, and Stage 3
+   using the original enrollment prototypes and fixed threshold.
+
+The ROME edit is accepted only if target recovery is accompanied by early
+retention and impostor-FAR constraints. The number of value-vector
+optimization steps is recorded as `v_optimization_steps`; this is not
+weight-training epochs. Individual user edits are primary. A shared edit is
+not treated as ROME unless it is applied as a sequence of explicit rank-one
+updates and each update is reported separately.
+
+The generalized evaluation requires at least five windows in each later stage,
+uses Stage 1-only drift ranking, evaluates every eligible user independently,
+and reports macro-average, pooled, bootstrap, Wilcoxon, and per-user success
+metrics. A successful user must achieve at least a five-percentage-point Stage
+2 FRR reduction, no Stage 3 FRR increase, FAR increase no greater than one
+percentage point, early-test FRR increase no greater than two percentage
+points, and a measured rank-one update.
+
+## 16. Result visualizations
+
+The causal-tracing script also saves three annotated heatmaps: recovery
+fraction by intervention and user, patched distance by intervention and user,
+and wrong-user control distance by intervention and user. The model-editing
+script saves before/after FRR and FAR plots, genuine-distance recovery,
+recovery-versus-security trade-off, and rank-one edit cost. These figures are
+generated from the saved CSV metrics so the visual results remain reproducible
+and directly traceable to the reported numbers.

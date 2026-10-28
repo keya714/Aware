@@ -1,0 +1,22 @@
+{
+  "method": "ROME-style rank-one model editing",
+  "edited_matrix": "Transformer layer 2 linear2 weight",
+  "adaptation_stage": "stage_1",
+  "primary_holdout": "stage_2",
+  "secondary_holdout": "stage_3",
+  "threshold": 1.1885696649551392,
+  "selected_users": [
+    "163748",
+    "132109",
+    "562519",
+    "756382",
+    "748549"
+  ],
+  "seed": 228,
+  "v_optimization_steps": 1,
+  "replay_size": 64,
+  "adaptation_size": 64,
+  "rank": 1,
+  "covariance": "training-key uncentered covariance with 1e-4 ridge",
+  "formula": "W_new = W + (v - (W k + b)) outer (C^-1 k) / ((C^-1 k)^T k)"
+}

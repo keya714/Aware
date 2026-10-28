@@ -1,0 +1,16 @@
+{
+  "primary_stage": "stage_2",
+  "secondary_stage": "stage_3",
+  "n_eligible_users": 35,
+  "n_users_with_results": 33,
+  "stage_2": {
+    "wilcoxon_statistic": 78.0,
+    "p_value": 0.0011088607321185246,
+    "n_users": 33
+  },
+  "stage_3": {
+    "wilcoxon_statistic": 44.0,
+    "p_value": 0.005431112352407814,
+    "n_users": 33
+  }
+}

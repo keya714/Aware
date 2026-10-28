@@ -1,0 +1,17 @@
+{
+  "primary_stage": "stage_2",
+  "secondary_stage": "stage_3",
+  "n_eligible_users": 35,
+  "n_users_with_results": 1,
+  "stage_2": {
+    "wilcoxon_statistic": 1.0,
+    "p_value": 0.5,
+    "n_users": 1
+  },
+  "stage_3": {
+    "wilcoxon_statistic": NaN,
+    "p_value": NaN,
+    "n_users": 1,
+    "note": "No nonzero paired differences"
+  }
+}

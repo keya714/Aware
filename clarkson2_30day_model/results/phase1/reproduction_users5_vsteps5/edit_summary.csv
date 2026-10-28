@@ -1,0 +1,6 @@
+method,scope,user_id,rank,v_optimization_steps,key_dimension,value_dimension,weight_displacement_l2
+ROME_layer2_linear2_rank1,individual,163748,1,5,128,64,0.24868763983249664
+ROME_layer2_linear2_rank1,individual,132109,1,5,128,64,0.5378544330596924
+ROME_layer2_linear2_rank1,individual,562519,1,5,128,64,0.4911578595638275
+ROME_layer2_linear2_rank1,individual,756382,1,5,128,64,0.6094968318939209
+ROME_layer2_linear2_rank1,individual,748549,1,5,128,64,0.7805473208427429
