@@ -9,6 +9,21 @@ clarkson2_attention_model/results/sequences.npz
 # Logs
 logs
 *.log
+
+# Research datasets and raw/processed event data (never commit these)
+ClarksonI/
+KBOC/
+filtered_dataset/
+Clarkson-I-2014.tar.gz
+clarkson-II-2018-filtered_dataset.zip
+clarkson2_preprocessing/outputs/
+clarkson2_30day_model/outputs/
+**/*.tsv.gz
+**/*.csv.gz
+**/*.npz
+
+# Local generated reports/build products
+output/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
