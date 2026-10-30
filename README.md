@@ -79,7 +79,7 @@ The raw Clarkson II dataset and generated output artifacts are intentionally not
 After the saved longitudinal metrics artifact is available, run:
 
 ```bash
-python scripts/make_drift_metrics_figure.py
+python clarkson2_30day_model/make_drift_metrics_figure.py
 ```
 
 This writes `clarkson2_30day_model/figures/longitudinal_drift_metrics.png`, which plots EER, FAR, and FRR for the 30-day test and Stages 1--3. The script fails if the metrics artifact does not contain measured `stage`, `eer`, `far`, and `frr` fields; it does not infer EER from fixed-threshold FAR/FRR.
